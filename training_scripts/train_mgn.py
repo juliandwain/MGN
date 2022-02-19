@@ -115,11 +115,12 @@ if "CUDA_VISIBLE_DEVICES" in os.environ:
         )
     )
 
-device = torch.device(
-    "cuda:" + str(free_gpus[0])
-    if torch.cuda.is_available() and len(free_gpus) > 0
-    else "cpu"
-)
+# device = torch.device(
+#     "cuda:" + str(free_gpus[0])
+#     if torch.cuda.is_available() and len(free_gpus) > 0
+#     else "cpu"
+# )
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 # if len(free_gpus) == 0 and device != "cpu":
 #     raise Exception("No free GPUs")
 use_parallel = m.get_use_parallel() and len(free_gpus) > 1 and device != "cpu"
