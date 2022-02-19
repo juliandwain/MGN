@@ -20,6 +20,8 @@ class ModelConfig:
 
         # data-related parameters
 
+        print(config.keys())
+        print(config_file)
         c_data = config["DATA"]
 
         # dataset class
