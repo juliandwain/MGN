@@ -124,6 +124,9 @@ device = torch.device(
 #     raise Exception("No free GPUs")
 use_parallel = m.get_use_parallel() and len(free_gpus) > 1 and device != "cpu"
 
+print(f"Device: {device}")
+print(f"Parallel: {use_parallel}")
+
 if use_parallel:
     train_loader = DataListLoader(
         train_dataset, batch_size=batch_size, shuffle=True
