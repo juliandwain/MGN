@@ -28,7 +28,7 @@ def animate(num):
     ax.set_axis_off()
     vmin, vmax = bounds[traj]
     pos = rollout_data["pred"][traj][step]
-    faces = rollout_data[traj]['faces'][step]
+    faces = rollout_data['faces'][traj][step]
     velocity = rollout_data['pred'][traj][step]
     triang = mtri.Triangulation(pos[:, 0], pos[:, 1], faces)
     ax.tripcolor(triang, velocity[:, 0], vmin=vmin[0], vmax=vmax[0])
