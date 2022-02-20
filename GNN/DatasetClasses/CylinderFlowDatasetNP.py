@@ -437,6 +437,7 @@ class CylinderFlowDatasetNP(Dataset):
 
         self.noise = noise  # to do: check none or length==output_dim
         self.noise_gamma = noise_gamma
+        self.faces = trajectory["cells"]
 
         # update function; update momentum based on predicted change ('velocity'), predict pressure
         def update_function(
